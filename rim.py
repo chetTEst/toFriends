@@ -21,7 +21,7 @@ def RomanToDec(strng):
     for i in range(0, len(strng)-1):
         if not ("I" == strng[i] or "X" == strng[i] or "L" == strng[i] or "C" == strng[i] or "D" == strng[i] or "M" == strng[i]):
             raise ValueError("Не верный формат римского числа")
-        if coding[strng[i]] < coding[strng[ i +1]]:
+        if coding[strng[i]] < coding[strng[i+1]]:
             dec -= coding[strng[i]]
         else:
             dec += coding[strng[i]]
