@@ -28,5 +28,5 @@ def RomanToDec(strng):
     dec += coding[strng[-1]]
     return dec
 
-print(RomanToDec("MCMXCIXe"))
+print(RomanToDec("MCMXCIX"))
 print(decToRoman(1999))
