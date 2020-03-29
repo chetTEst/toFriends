@@ -14,17 +14,19 @@ def decToRoman(num):
 
 def RomanToDec(strng):
     dec = 0
-    srtng = strng.upper()
-    if  not ("I" in strng or "X" in strng or "L" in strng or "C" in strng or "D" in strng or "M" in strng):
+    strng = strng.upper()
+    coding = dict(M=1000, D=500, C=100, L=50, X=10 ,V=5, I=1)
+    if not ("I" == strng[-1] or "X" == strng[-1] or "L" == strng[-1] or "C" == strng[-1] or "D" == strng[-1] or "M" == strng[-1]):
         raise ValueError("Не верный формат римского числа")
-    coding = dict(M=1000, D=500, C=100, L=50, X=10,V=5, I=1)
     for i in range(0, len(strng)-1):
-        if coding[strng[i]] < coding[strng[i+1]]:
+        if not ("I" == strng[i] or "X" == strng[i] or "L" == strng[i] or "C" == strng[i] or "D" == strng[i] or "M" == strng[i]):
+            raise ValueError("Не верный формат римского числа")
+        if coding[strng[i]] < coding[strng[ i +1]]:
             dec -= coding[strng[i]]
         else:
             dec += coding[strng[i]]
     dec += coding[strng[-1]]
     return dec
 
-print(RomanToDec("MCMXCIX"))
+print(RomanToDec("MCMXCIXe"))
 print(decToRoman(1999))
